@@ -4,14 +4,11 @@ TgCrypto
 
 # Asynchronous Web Server & HTTP Client
 aiohttp
-aiohttp-jinja2
 
 # Asynchronous Database Driver
 motor
 dnspython
 
-# HTML Template Engine
-Jinja2
-
 # Helper Libraries
 python-dotenv
+psutil
