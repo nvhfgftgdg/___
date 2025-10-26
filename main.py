@@ -422,7 +422,7 @@ async def health_handler(request):
 async def favicon_handler(request):
     return web.Response(status=204) 
 
-@routes.get("/stream/{message_id:\d+}")
+@routes.get(r"/stream/{message_id:\d+}")
 async def stream_handler(request: web.Request):
     client_index = None 
     try:
@@ -772,8 +772,8 @@ if __name__ == "__main__":
         LOGGER.info(f"Domain loaded: {CURRENT_PROTECTED_DOMAIN}")
         
         # DB Indexing (Kept)
-        await media_collection.create_index("tmdb_id", unique=True, sparse=True)
-        await media_collection.create_index("wp_post_id", unique=True, sparse=True)
+        await media_collection.create_index("tmdb_id", unique=True)
+        await media_collection.create_index("wp_post_id", unique=True)
         LOGGER.info("DB indexes ensured.")
         
         try:
