@@ -1,4 +1,4 @@
- # Use a modern, slim version of Python as the base image
+# Use a modern, slim version of Python as the base image
 FROM python:3.11-slim-bookworm
 
 # Set environment variables for Python to run smoothly
@@ -8,9 +8,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Set the working directory inside the container
 WORKDIR /app
 
-# Install system packages like ffmpeg (useful for getting video metadata later)
+# (REMOVED ffmpeg installation as it's not needed for streaming)
+# Install system packages (if any)
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ffmpeg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
